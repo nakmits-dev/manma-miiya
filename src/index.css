@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-black text-white;
+    font-family: "Impact", "Anton", system-ui, -apple-system, sans-serif;
+  }
+}
+
+@layer components {
+  .ticket-button {
+    @apply bg-yellow-500 text-black font-black uppercase tracking-wider 
+           border-[6px] border-yellow-600 hover:bg-yellow-400
+           hover:scale-105 active:scale-95 shadow-lg
+           transition-all duration-100 transform
+           disabled:opacity-50 disabled:cursor-not-allowed
+           disabled:hover:scale-100 disabled:hover:bg-yellow-500;
+  }
+
+  .ticket-input {
+    @apply bg-zinc-900 border-4 border-yellow-500 text-white placeholder:text-zinc-600
+           focus:ring-yellow-400 focus:border-yellow-400 font-bold;
+  }
+
+  .ticket-container {
+    @apply bg-zinc-900 border-[8px] border-yellow-600 shadow-xl overflow-hidden p-6 relative z-0;
+  }
+
+  .jirou-heading {
+    @apply text-yellow-500 font-black tracking-tight uppercase;
+    text-shadow: 4px 4px 0 #000, 
+                -2px -2px 0 #000,  
+                 2px -2px 0 #000,
+                -2px 2px 0 #000,
+                 2px 2px 0 #000;
+  }
+
+  .reaction-button {
+    @apply bg-zinc-800 text-yellow-500 font-black border-4 border-yellow-600
+           hover:bg-zinc-700 active:scale-95 transition-all duration-100
+           disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-zinc-800;
+  }
+
+  .reaction-text {
+    @apply text-base font-black tracking-wider;
+  }
+
+  .reaction-count {
+    @apply inline-flex items-center justify-center;
+    font-feature-settings: "tnum";
+    font-variant-numeric: tabular-nums;
+  }
+
+  .reaction-count::before {
+    content: "¥";
+    @apply mr-0.5 text-sm;
+  }
+
+  .reaction-count::after {
+    content: "";
+    @apply absolute inset-0 border-2 border-yellow-600 rounded-full opacity-50;
+  }
+
+  .user-id-tag {
+    @apply absolute top-4 left-4 bg-yellow-500 text-black font-black px-3 py-1 
+           border-4 border-yellow-600 text-base transform -rotate-6 shadow-md;
+  }
+}
